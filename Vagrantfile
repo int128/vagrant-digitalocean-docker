@@ -1,6 +1,6 @@
 Vagrant.configure('2') do |config|
   config.vm.provider :digital_ocean do |provider, override|
-    provider.image = 'Docker 1.3.2 on 14.04'
+    provider.image = 'docker'
     provider.region = 'sfo1'
     provider.size = '512mb'
     provider.ssh_key_name = 'DIGITAL_OCEAN_SSHKEY'
