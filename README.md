@@ -12,25 +12,38 @@ Features:
 Prepare
 -------
 
-Sign up [DigitalOcean](https://www.digitalocean.com/?refcode=05617a2b5246).
+Sign up [DigitalOcean](https://www.digitalocean.com/?refcode=05617a2b5246) and get your API key.
 
 Install [Vagrant](https://www.vagrantup.com).
 
-Install [Digital Ocean Vagrant Provider](https://github.com/smdahlen/vagrant-digitalocean) as following.
+Install [Digital Ocean Vagrant Provider](https://github.com/smdahlen/vagrant-digitalocean) and [Vagrant Dotenv](https://github.com/johnbellone/vagrant-dotenv).
 
 ```sh
 vagrant plugin install vagrant-digitalocean
+vagrant plugin install vagrant-dotenv
+```
+
+Set up `.env` file as follows:
+
+```sh
+echo "DIGITALOCEAN_SSH_KEY_NAME='my'" >> .env
+echo "DIGITALOCEAN_API_KEY='xxxxxxxx'" >> .env
 ```
 
 
 Run
 ---
 
-After setting up your `Vagrantfile` with SSH key name and DigitalOcean API key,
-you may create an new droplet as follows:
+Create an new droplet as follows:
 
 ```sh
-vagrant up --provider=digital_ocean --provision
+vagrant up
 vagrant ssh
+```
+
+Destroy the droplet as follows:
+
+```sh
+vagrant destroy
 ```
 
