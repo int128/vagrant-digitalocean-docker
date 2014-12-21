@@ -23,9 +23,11 @@ vagrant plugin install vagrant-digitalocean
 vagrant plugin install vagrant-dotenv
 ```
 
-Set up `.env` file as follows:
+Check out the project and set up `.env` file.
 
 ```sh
+git clone https://github.com/int128/vagrant-digitalocean-docker.git
+cd vagrant-digitalocean-docker
 echo "DIGITALOCEAN_SSH_KEY_NAME='my'" >> .env
 echo "DIGITALOCEAN_API_KEY='xxxxxxxx'" >> .env
 ```
